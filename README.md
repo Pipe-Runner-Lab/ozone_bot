@@ -23,6 +23,7 @@ Here is a list of them, and ways to install them.
 	  TOKEN='your telegram bot token goes here'
 	  ```
 
+
    You may also have to create a few directories in the root:
    * **screenshot**
 
