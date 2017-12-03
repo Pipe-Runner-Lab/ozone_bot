@@ -23,10 +23,15 @@ Here is a list of them, and ways to install them.
 	  TOKEN='your telegram bot token goes here'
 	  ```
 
-
    You may also have to create a few directories in the root:
    * **screenshot**
 
+## How to use it
+Well **cd** into the root directory of Ozone and do this in your terminal,
+```bash
+python main.py
+```  
+but you would not want to use it like this. The best way to use Ozone would be to call it automatically on startup using **systemd**
 ---
 
 ## Command list ( Telegram bot commands )
