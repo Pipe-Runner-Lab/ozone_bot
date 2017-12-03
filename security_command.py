@@ -1,14 +1,7 @@
-# importing command handler from telegram.ext
-from telegram.ext import (CommandHandler)
-
-# importing password
-from password import (CODE)
-
-# importing the subprocess module
-from subprocess import (call)
-
-# importing date time
 from datetime import datetime
+from subprocess import (call)
+from telegram.ext import (CommandHandler)
+from password import (CODE)
 
 
 def send_screenshot(bot, update, args):
