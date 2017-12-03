@@ -32,6 +32,7 @@ Well **cd** into the root directory of Ozone and do this in your terminal,
 python main.py
 ```
 but you would not want to use it like this. The best way to use Ozone would be to call it automatically on startup using **systemd**
+
 ---
 
 ## Command list ( Telegram bot commands )
