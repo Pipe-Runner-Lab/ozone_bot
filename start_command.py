@@ -1,4 +1,3 @@
-# importing command handler from telegram.ext
 from telegram.ext import (CommandHandler)
 
 

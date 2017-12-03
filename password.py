@@ -1,1 +1,1 @@
-CODE = 'god'
+CODE = 'awp'
