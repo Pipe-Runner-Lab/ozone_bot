@@ -1,8 +1,5 @@
 import logging
 
-# importing token from token file ( not public )
-# from key import (token)
-
 # importing from telegram.ext package
 from telegram.ext import (Updater)
 
@@ -11,6 +8,7 @@ from key import (TOKEN)
 
 # importing custom command modules
 from start_command import (START_HANDLER)
+from security_command import (SEND_SCREENSHOT_HANDLER, SEND_CAMERASHOT_HANDLER)
 
 
 def main():
@@ -26,8 +24,10 @@ def main():
     # creating a dispatcher instance
     dispatcher = updater.dispatcher
 
-    # adding commands to dispatcher
+    # adding handlers to dispatcher
     dispatcher.add_handler(START_HANDLER)
+    dispatcher.add_handler(SEND_SCREENSHOT_HANDLER)
+    dispatcher.add_handler(SEND_CAMERASHOT_HANDLER)
 
     # starting polling
     updater.start_polling()
