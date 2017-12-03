@@ -30,7 +30,7 @@ Here is a list of them, and ways to install them.
 Well **cd** into the root directory of Ozone and do this in your terminal,
 ```bash
 python main.py
-```  
+```
 but you would not want to use it like this. The best way to use Ozone would be to call it automatically on startup using **systemd**
 ---
 
