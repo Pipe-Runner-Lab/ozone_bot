@@ -1,9 +1,10 @@
 import logging
+import sqlite3
 from telegram.ext import (Updater)
 from key import (TOKEN)
 from start_command import (START_HANDLER)
 from security_command import (SEND_SCREENSHOT_HANDLER, SEND_CAMERASHOT_HANDLER)
-from utility_command import (SET_TIMER)
+from utility_command import (SET_REMINDER, CANCEL_REMINDER, DOWNLOAD_LINK)
 
 
 def main():
@@ -12,6 +13,9 @@ def main():
     # logging text message on terminal
     logging.basicConfig(
         format='%(asctime)s - %(levelname)s - %(message)s', level=logging.INFO)
+
+    # creating database cursor
+    connection = sqlite3.connect('data.db')
 
     # creating Updater instance
     updater = Updater(token=TOKEN)
@@ -26,7 +30,9 @@ def main():
     dispatcher.add_handler(START_HANDLER)
     dispatcher.add_handler(SEND_SCREENSHOT_HANDLER)
     dispatcher.add_handler(SEND_CAMERASHOT_HANDLER)
-    dispatcher.add_handler(SET_TIMER)
+    dispatcher.add_handler(SET_REMINDER)
+    dispatcher.add_handler(CANCEL_REMINDER)
+    dispatcher.add_handler(DOWNLOAD_LINK)
 
     # calling in the scheduler
 
