@@ -1,14 +1,22 @@
 import logging
 import sqlite3
 from telegram.ext import (Updater)
-from key import (TOKEN)
-from start_command import (START_HANDLER)
-from security_command import (SEND_SCREENSHOT_HANDLER, SEND_CAMERASHOT_HANDLER)
-from utility_command import (SET_REMINDER, CANCEL_REMINDER, DOWNLOAD_LINK)
+from key.key import (TOKEN)
+from command_list.start import (Start)
+from command_list.camerashot import (Camerashot)
+from command_list.screenshot import (Screenshot)
+from command_list.reminder import (Reminder)
+from command_list.download import (Download)
+
+START = Start()
+CAMERASHOT = Camerashot()
+SCREENSHOT = Screenshot()
+REMINDER = Reminder()
+DOWNLOAD = Download()
 
 
 def main():
-    print("--------- Starting Ozone bot -------------")
+    print "--------- Starting Ozone bot -------------"
 
     # logging text message on terminal
     logging.basicConfig(
@@ -27,12 +35,12 @@ def main():
     # job_queue = updater.job_queue
 
     # adding handlers to dispatcher
-    dispatcher.add_handler(START_HANDLER)
-    dispatcher.add_handler(SEND_SCREENSHOT_HANDLER)
-    dispatcher.add_handler(SEND_CAMERASHOT_HANDLER)
-    dispatcher.add_handler(SET_REMINDER)
-    dispatcher.add_handler(CANCEL_REMINDER)
-    dispatcher.add_handler(DOWNLOAD_LINK)
+    dispatcher.add_handler(START.START_HANDLER)
+    dispatcher.add_handler(SCREENSHOT.SEND_SCREENSHOT_HANDLER)
+    dispatcher.add_handler(CAMERASHOT.SEND_CAMERASHOT_HANDLER)
+    dispatcher.add_handler(REMINDER.SET_REMINDER)
+    dispatcher.add_handler(REMINDER.CANCEL_REMINDER)
+    dispatcher.add_handler(DOWNLOAD.DOWNLOAD_LINK)
 
     # calling in the scheduler
 
