@@ -69,7 +69,7 @@ class Reminder(object):
         elif date < datetime.now():
             bot.send_message(chat_id=update.message.chat_id,
                              reply_to_message_id=message_id,
-                             text="I wish I could go in the past to remind you but I can't... How about we set a correct time one now...",
+                             text="I wish I could go in the past to remind you but I can't... How about we set a correct time now...",
                              reply_markup=reply_markup)
             return "SET_REMINDER_DATE"
         else:
