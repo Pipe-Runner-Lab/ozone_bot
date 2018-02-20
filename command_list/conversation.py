@@ -4,6 +4,7 @@ from telegram.ext import (
     ConversationHandler, MessageHandler, CallbackQueryHandler)
 from telegram import ChatAction
 from telegram.ext.filters import (Filters)
+from database.Database_utility import (Database_utility)
 
 
 class Conversation(object):
@@ -12,5 +13,19 @@ class Conversation(object):
             Filters.text, self.chat, pass_user_data=True)
 
     def chat(self, bot, update, user_data):
+        db = Database_utility()
+
+        user_id = update.message.from_user.id
+        username = update.message.from_user.username
+
+        search_result = db.get_user_data(user_id)
+
+        if search_result is None:
+            db.insert_user_data(user_id, username)
+            bot.send_message(chat_id=update.message.chat_id,
+                             text="Seems like we haven't met before. I have added you to my database!")
+        else:
+            print search_result
+            pass
         print(update.message.text)
-        print(update.message.chat_id)
+        print(user_id)

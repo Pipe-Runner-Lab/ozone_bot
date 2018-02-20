@@ -6,6 +6,7 @@ from command_list.camerashot import (Camerashot)
 from command_list.screenshot import (Screenshot)
 from command_list.reminder import (Reminder)
 from command_list.download import (Download)
+from command_list.delete_users import (DeleteUsers)
 from command_list.conversation import (Conversation)
 
 START = Start()
@@ -13,6 +14,7 @@ CAMERASHOT = Camerashot()
 SCREENSHOT = Screenshot()
 REMINDER = Reminder()
 DOWNLOAD = Download()
+DELETEUSERS = DeleteUsers()
 CONVERSATION = Conversation()
 
 
@@ -39,6 +41,7 @@ def main():
     dispatcher.add_handler(REMINDER.SET_REMINDER)
     dispatcher.add_handler(REMINDER.CANCEL_REMINDER)
     dispatcher.add_handler(DOWNLOAD.DOWNLOAD_LINK)
+    dispatcher.add_handler(DELETEUSERS.DELETE_USERS_HANDLER)
     dispatcher.add_handler(CONVERSATION.CHAT_HANDLER)
 
     # calling in the scheduler
