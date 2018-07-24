@@ -1,6 +1,5 @@
 from telegram import ChatAction
 from telegram.ext import (CommandHandler)
-# from password.password import CODE
 from database.Database_utility import (Database_utility)
 
 

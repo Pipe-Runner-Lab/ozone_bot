@@ -8,6 +8,8 @@ from command_list.reminder import (Reminder)
 from command_list.download import (Download)
 from command_list.delete_users import (DeleteUsers)
 from command_list.conversation import (Conversation)
+from command_list.spam import (Spam)
+from command_list.inline_query import (InlineQuery)
 
 START = Start()
 CAMERASHOT = Camerashot()
@@ -16,6 +18,8 @@ REMINDER = Reminder()
 DOWNLOAD = Download()
 DELETEUSERS = DeleteUsers()
 CONVERSATION = Conversation()
+SPAM = Spam()
+INLINE_QUERY = InlineQuery()
 
 
 def main():
@@ -43,6 +47,9 @@ def main():
     dispatcher.add_handler(DOWNLOAD.DOWNLOAD_LINK)
     dispatcher.add_handler(DELETEUSERS.DELETE_USERS_HANDLER)
     dispatcher.add_handler(CONVERSATION.CHAT_HANDLER)
+    dispatcher.add_handler(SPAM.SPAM_START_HANDLER)
+    dispatcher.add_handler(SPAM.SPAM_STOP_HANDLER)
+    dispatcher.add_handler(INLINE_QUERY.INLINE_QUERY_HANDLER)
 
     # calling in the scheduler
 

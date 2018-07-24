@@ -2,7 +2,7 @@ from subprocess import (call)
 from telegram.ext import (
     CommandHandler)
 from telegram import ChatAction
-from password.password import CODE
+from username.username import USERNAME
 
 
 class Download(object):
@@ -13,12 +13,17 @@ class Download(object):
 
     def download_link(self, bot, update, args):
         message_id = update.message.message_id
+        username = update.message.from_user.username
+
         try:
-            if args[1] != CODE:
+            if username != USERNAME:
                 bot.send_chat_action(chat_id=update.message.chat_id,
                                      action=ChatAction.TYPING)
+
+                message = ("Sorry %s, cannot let you do that..." %
+                           update.message.from_user.first_name)
                 bot.send_message(chat_id=update.message.chat_id,
-                                 text="You are not authorized to use this command")
+                                 text=message)
             else:
                 bot.send_chat_action(chat_id=update.message.chat_id,
                                      action=ChatAction.TYPING)

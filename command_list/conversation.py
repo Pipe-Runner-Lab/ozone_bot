@@ -21,9 +21,11 @@ class Conversation(object):
         search_result = db.get_user_data(user_id)
 
         if search_result is None:
+            message = ("Hi %s, seems like we haven't met before. I have added you to my database!" %
+                       update.message.from_user.first_name)
             db.insert_user_data(user_id, username)
             bot.send_message(chat_id=update.message.chat_id,
-                             text="Seems like we haven't met before. I have added you to my database!")
+                             text=message)
         else:
             print search_result
             pass
