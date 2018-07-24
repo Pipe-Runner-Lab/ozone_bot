@@ -15,11 +15,7 @@ Here is a list of them, and ways to install them.
 | aria2 | terminal app | [link](https://aria2.github.io/) |
 | dateparser | pip module | [link](https://dateparser.readthedocs.io/en/latest/#supported-calendars) |
 
-**NOTE:** The application also need two undocumented files in *root directory* of the bot.  
-   * **password.py**  
-      ```python
-	  CODE='your password goes here'
-	  ```
+**NOTE:** The application also need one undocumented files in *key* directory of the bot.  
    * **key.py**  
       ```python
 	  TOKEN='your telegram bot token goes here'

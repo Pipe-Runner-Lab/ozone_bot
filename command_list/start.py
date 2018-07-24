@@ -1,6 +1,5 @@
 from telegram.ext import (CommandHandler)
 
-
 class Start(object):
     def __init__(self):
         self.START_HANDLER = CommandHandler('start', self.start)
